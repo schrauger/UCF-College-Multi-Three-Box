@@ -9,6 +9,7 @@ class ucf_college_multi_three_box_shortcode {
     function __construct() {
         add_action( 'init', array( $this, 'add_shortcode' ) );
         add_filter( 'query_vars', array($this, 'add_query_vars_filter' )); // tell wordpress about new url parameters
+        add_filter( 'ucf_college_shortcode_menu_item', array($this, 'add_ckeditor_shortcode'));
     }
 
     /**
@@ -18,6 +19,18 @@ class ucf_college_multi_three_box_shortcode {
         if ( ! ( shortcode_exists( self::shortcode_slug ) ) ) {
             add_shortcode( self::shortcode_slug, array($this, 'replacement' ));
         }
+    }
+
+    /**
+     * Adds the shortcode to the ckeditor dropdown menu
+     */
+    function add_ckeditor_shortcode($shortcode_array){
+        $shortcode_array[] = array(
+            'slug' => self::shortcode_slug,
+            'name' => self::shortcode_name,
+            'description' => self::shortcode_description
+        );
+        return $shortcode_array;
     }
 
     /**
