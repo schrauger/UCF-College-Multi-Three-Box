@@ -42,6 +42,11 @@
       -ms-transition: background 0.5s ease-in;
       -o-transition: background 0.5s ease-in;
       -webkit-transition: background 0.5s ease-in; }
+      .grid-box a span i {
+        clear: both;
+        display: block;
+        margin: 10px 0;
+        font-size: 22px; }
       .grid-box a span:hover {
         /* remove black udnerline */
         background: rgba(0, 0, 0, 0.5);
