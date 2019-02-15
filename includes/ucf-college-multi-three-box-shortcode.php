@@ -103,7 +103,7 @@ class ucf_college_multi_three_box_shortcode {
     href='{$box_url}'
     >
             
-        <span>{$box_text}</span>
+        <span>{$box_text}<i class="fas fa-arrow-right"></i></span>
     </a>";
                         }
                     }
