@@ -92,4 +92,10 @@ body.home.page-template-default {
       max-width: 300px;
       margin-bottom: 25px; }
 
-/*# sourceMappingURL=plugin.css.map */
+@media (max-width: 1000px) {
+  .grid-box a {
+    width: 45%; } }
+
+@media (max-width: 768px) {
+  .grid-box a {
+    width: 100%; } }

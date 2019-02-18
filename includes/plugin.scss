@@ -127,3 +127,23 @@ body.home.page-template-default {
 	}
 }
 
+@media (max-width: 1000px) {
+	.grid-box {
+
+		 a {
+		 	width: 45%;
+		 }
+
+	}
+}
+
+@media (max-width: 768px) { 
+	.grid-box {
+
+		 a {
+		 	width: 100%;
+		 }
+
+	}
+}
+
