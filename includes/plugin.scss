@@ -4,6 +4,12 @@
 
 $yellow: rgba(255,204,0,1);
 
+// full-width calculations to let multi-three-box break out of parent width restrictions
+.full-width {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
 // large image boxes
 .grid-box {
 	display: flex;

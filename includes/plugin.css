@@ -1,6 +1,10 @@
 /**
  * Created by stephen on 2/12/19.
  */
+.full-width {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw); }
+
 .grid-box {
   display: flex;
   justify-content: space-around;
@@ -82,3 +86,5 @@
     .wide-box .inner-box img {
       max-width: 300px;
       margin-bottom: 25px; }
+
+/*# sourceMappingURL=plugin.css.map */

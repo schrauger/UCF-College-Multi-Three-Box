@@ -128,7 +128,7 @@ class ucf_college_multi_three_box_shortcode {
         if ( have_rows( 'triple_box_row' ) ) {
             $header = get_field( 'header' );
             $replacement_data .= "
-<div class='wide-box'>
+<div class='wide-box full-width'> <!-- break out of parent width restrictions -->
     <div class='wide-box-overlay'></div>
     <div class='container'>";
 
