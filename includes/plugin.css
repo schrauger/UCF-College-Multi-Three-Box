@@ -1,9 +1,14 @@
 /**
  * Created by stephen on 2/12/19.
  */
-.full-width {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw); }
+body.home.page-template-default {
+  overflow-x: hidden;
+  overflow-y: scroll; }
+  body.home.page-template-default article.publish {
+    overflow: visible; }
+    body.home.page-template-default article.publish .full-width {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw); }
 
 .grid-box {
   display: flex;
