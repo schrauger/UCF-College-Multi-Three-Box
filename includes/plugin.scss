@@ -4,7 +4,7 @@
 
 $yellow: rgba(255,204,0,1);
 
-body.home.page-template-default {
+body {
 	overflow-x: hidden; // prevent horizontal scrollbar
 	overflow-y: scroll; // allow vertical scrollbar
 
@@ -24,6 +24,7 @@ body.home.page-template-default {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	margin: 50px 0;
 
 	h2 {
 		clear: both;
@@ -91,6 +92,7 @@ body.home.page-template-default {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	margin: 50px 0;
 
 	.wide-box-overlay {
 		width: 100%;
@@ -108,7 +110,6 @@ body.home.page-template-default {
 		margin: 0 2% 3% 0;
 		width: 30%;
 		text-align: center;
-		border-bottom: 1px solid #000;
 		padding: 20px 0;
 		min-height: 380px;
 
@@ -128,9 +129,9 @@ body.home.page-template-default {
 }
 
 @media (max-width: 1000px) {
-	.grid-box {
+	.grid-box, .wide-box {
 
-		 a {
+		 a, .inner-box {
 		 	width: 45%;
 		 }
 
@@ -138,9 +139,9 @@ body.home.page-template-default {
 }
 
 @media (max-width: 768px) { 
-	.grid-box {
+	.grid-box, .wide-box {
 
-		 a {
+		 a, .inner-box {
 		 	width: 100%;
 		 }
 

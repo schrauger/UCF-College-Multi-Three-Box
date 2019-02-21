@@ -1,19 +1,20 @@
 /**
  * Created by stephen on 2/12/19.
  */
-body.home.page-template-default {
+body {
   overflow-x: hidden;
   overflow-y: scroll; }
-  body.home.page-template-default article.publish {
+  body article.publish {
     overflow: visible; }
-    body.home.page-template-default article.publish .full-width {
+    body article.publish .full-width {
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw); }
 
 .grid-box {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin: 50px 0; }
   .grid-box h2 {
     clear: both;
     display: block; }
@@ -66,7 +67,8 @@ body.home.page-template-default {
   position: relative;
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin: 50px 0; }
   .wide-box .wide-box-overlay {
     width: 100%;
     position: absolute;
@@ -81,7 +83,6 @@ body.home.page-template-default {
     margin: 0 2% 3% 0;
     width: 30%;
     text-align: center;
-    border-bottom: 1px solid #000;
     padding: 20px 0;
     min-height: 380px; }
     .wide-box .inner-box a {
@@ -93,9 +94,9 @@ body.home.page-template-default {
       margin-bottom: 25px; }
 
 @media (max-width: 1000px) {
-  .grid-box a {
+  .grid-box a, .grid-box .inner-box, .wide-box a, .wide-box .inner-box {
     width: 45%; } }
 
 @media (max-width: 768px) {
-  .grid-box a {
+  .grid-box a, .grid-box .inner-box, .wide-box a, .wide-box .inner-box {
     width: 100%; } }
