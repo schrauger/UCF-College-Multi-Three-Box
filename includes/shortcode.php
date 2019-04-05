@@ -145,6 +145,14 @@ class ucf_college_multi_three_box_shortcode {
                             the_row();
                             $box_text             = get_sub_field( 'box_text' );
                             $box_url              = get_sub_field( 'box_url' );
+                            if ($box_url){
+                            	$box_url_start = "<a href='{$box_url}'>";
+                            	$box_url_end = "</a>";
+                            } else {
+	                            $box_url_start = "";
+	                            $box_url_end = "";
+                            }
+
                             $background_image_id = get_sub_field( 'background_image_id' );
                             $size = 'large';
                             $background_image = wp_get_attachment_image_src($background_image_id, $size);
@@ -152,11 +160,11 @@ class ucf_college_multi_three_box_shortcode {
 
                             $replacement_data .= "
         <div class='inner-box {$acf_individual_box_group_id}'>
-            <a href='{$box_url}'>
+            {$box_url_start}
                 <img src='{$background_image_url}' />
                 <br />
                 <span>{$box_text}</span>
-            </a>
+            {$box_url_end}
         </div>";
                         }
                     }
