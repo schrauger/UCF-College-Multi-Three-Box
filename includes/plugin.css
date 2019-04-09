@@ -18,7 +18,7 @@ body {
   .grid-box h2 {
     clear: both;
     display: block; }
-  .grid-box a {
+  .grid-box a, .grid-box div {
     display: block;
     float: left;
     color: #000;
@@ -33,10 +33,10 @@ body {
     -ms-transition: background-size 2s ease-in;
     -o-transition: background-size 2s ease-in;
     -webkit-transition: background-size 2s ease-in; }
-    .grid-box a:hover {
+    .grid-box a:hover, .grid-box div:hover {
       background-size: 200% auto;
       text-decoration: none; }
-    .grid-box a span {
+    .grid-box a span, .grid-box div span {
       text-align: center;
       display: block;
       width: 100%;
@@ -52,12 +52,12 @@ body {
       -ms-transition: background 0.5s ease-in;
       -o-transition: background 0.5s ease-in;
       -webkit-transition: background 0.5s ease-in; }
-      .grid-box a span i {
+      .grid-box a span i, .grid-box div span i {
         clear: both;
         display: block;
         margin: 10px 0;
         font-size: 22px; }
-      .grid-box a span:hover {
+      .grid-box a span:hover, .grid-box div span:hover {
         /* remove black udnerline */
         background: rgba(0, 0, 0, 0.5);
         color: #fff; }
@@ -96,7 +96,8 @@ body {
 @media (max-width: 1000px) {
   .grid-box a, .grid-box .inner-box, .wide-box a, .wide-box .inner-box {
     width: 45%; } }
-
 @media (max-width: 768px) {
   .grid-box a, .grid-box .inner-box, .wide-box a, .wide-box .inner-box {
     width: 100%; } }
+
+/*# sourceMappingURL=plugin.css.map */
