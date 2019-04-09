@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF College Multi Three Box
 Description: Provides a shortcode for a Multi Three Box, to be used in the UCF Colleges Theme
-Version: 1.1.3
+Version: 1.1.4
 Author: Stephen Schrauger
 Plugin URI: https://github.com/schrauger/UCF-College-multi-three-box
 Github Plugin URI: schrauger/UCF-College-multi-three-box
@@ -29,24 +29,27 @@ class ucf_college_multi_three_box {
     }
 
     function add_css(){
-        wp_enqueue_style(
-            'ucf-college-multi-three-box-style',
-            plugin_dir_url(__FILE__) . '/includes/plugin.css',
-            false,
-            filemtime( plugin_dir_path(__FILE__).'/includes/plugin.css'),
-            false
-        );
+	    if (file_exists(plugin_dir_path(__FILE__).'/includes/plugin.css')) {
+		    wp_enqueue_style(
+			    'ucf-college-multi-three-box-style',
+			    plugin_dir_url( __FILE__ ) . '/includes/plugin.css',
+			    false,
+			    filemtime( plugin_dir_path( __FILE__ ) . '/includes/plugin.css' ),
+			    false
+		    );
+	    }
     }
 
     function add_js(){
-
-        wp_enqueue_script(
-            'ucf-college-multi-three-box-script',
-            plugin_dir_url(__FILE__) . 'includes/plugin.js',
-            false,
-            filemtime( plugin_dir_path(__FILE__).'/includes/plugin.js'),
-            false
-        );
+	    if (file_exists(plugin_dir_path(__FILE__).'/includes/plugin.js')) {
+		    wp_enqueue_script(
+			    'ucf-college-multi-three-box-script',
+			    plugin_dir_url( __FILE__ ) . 'includes/plugin.js',
+			    false,
+			    filemtime( plugin_dir_path( __FILE__ ) . '/includes/plugin.js' ),
+			    false
+		    );
+	    }
     }
     
     
