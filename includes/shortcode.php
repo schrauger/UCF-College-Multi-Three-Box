@@ -99,14 +99,14 @@ class ucf_college_multi_three_box_shortcode {
 							$box_url              = get_sub_field( 'box_url' );
 							if ($box_url){
 								$box_url_start = "<a 
-							    class='{$acf_individual_box_group_id}' 
+							    class='{$acf_individual_box_group_id} inner-box' 
 							    style='background-image: url(\"{$background_image_url}\")' 
 							    href='{$box_url}'
 							         >";
 								$box_url_end = "</a>";
 							} else {
 								$box_url_start = "<div 
-							    class='{$acf_individual_box_group_id}' 
+							    class='{$acf_individual_box_group_id} inner-box' 
 							    style='background-image: url(\"{$background_image_url}\")' 
 							         >";
 								$box_url_end = "</div>";
