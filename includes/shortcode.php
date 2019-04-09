@@ -90,31 +90,21 @@ class ucf_college_multi_three_box_shortcode {
                         while ( have_rows( $acf_individual_box_group_id ) ) {
                             the_row();
                             $box_text             = get_sub_field( 'box_text' );
-
+                            $box_url              = get_sub_field( 'box_url' );
                             $background_image_id = get_sub_field( 'background_image_id' );
                             $size = 'large';
                             $background_image = wp_get_attachment_image_src($background_image_id, $size);
                             $background_image_url = $background_image[0];
 
-	                        $box_url              = get_sub_field( 'box_url' );
-	                        if ($box_url){
-		                        $box_url_start = "<a 
-							    class='{$acf_individual_box_group_id}' 
-							    style='background-image: url(\"{$background_image_url}\")' 
-							    href='{$box_url}'
-							         >";
-		                        $box_url_end = "</a>";
-	                        } else {
-		                        $box_url_start = "<div 
-							    class='{$acf_individual_box_group_id}' 
-							    style='background-image: url(\"{$background_image_url}\")' 
-							         >";
-		                        $box_url_end = "</div>";
-	                        }
                             $replacement_data .= "
-    {$box_url_start}            
+    <a 
+    class='{$acf_individual_box_group_id}' 
+    style='background-image: url(\"{$background_image_url}\")' 
+    href='{$box_url}'
+    >
+            
         <span>{$box_text}<i class=\"fas fa-arrow-right\"></i></span>
-    {$box_url_end}";
+    </a>";
                         }
                     }
                 }
