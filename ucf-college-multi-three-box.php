@@ -19,8 +19,8 @@ include plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';
 class ucf_college_multi_three_box {
     function __construct() {
         // plugin css/js
-        add_action('wp_enqueue_scripts', array($this, 'add_css'));
-        add_action('wp_enqueue_scripts', array($this, 'add_js'));
+        add_action('init', array($this, 'add_css'));
+        add_action('init', array($this, 'add_js'));
 
         // plugin activation hooks
         register_activation_hook( __FILE__, array($this,'activation'));

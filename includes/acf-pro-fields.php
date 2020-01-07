@@ -15,6 +15,21 @@ class ucf_college_multi_three_box_acf_pro_fields {
     }
 
     static function create_fields() {
+
+	    // check function exists
+	    if( function_exists('acf_register_block') ) {
+		    // register a testimonial block
+		    acf_register_block(array(
+			                       'name'				=> 'ucf_college_multi_three_box',
+			                       'title'				=> __('Multi Three Box'),
+			                       'description'		=> __('Three square boxes in a row with multiple row ability.'),
+			                       'render_callback'	=> array('ucf_college_multi_three_box_shortcode','replacement_print'),
+			                       'category'			=> 'formatting',
+			                       'icon'				=> 'admin-comments',
+			                       'keywords'			=> array( 'testimonial', 'quote' ),
+		                       ));
+	    }
+
         if ( function_exists( 'acf_add_local_field_group' ) ) {
             acf_add_local_field_group(
                 array(
@@ -91,7 +106,7 @@ class ucf_college_multi_three_box_acf_pro_fields {
                             'collapsed'         => '',
                             'min'               => 1,
                             'max'               => 0,
-                            'layout'            => 'table',
+                            'layout'            => 'block',
                             'button_label'      => '',
                             'sub_fields'        => array(
                                 array(
@@ -111,7 +126,7 @@ class ucf_college_multi_three_box_acf_pro_fields {
                                     'sub_fields'        => array(
                                         array(
                                             'key'               => 'field_5c59f20118315',
-                                            'label'             => 'Box Text',
+                                            'label'             => '',
                                             'name'              => 'box_text',
                                             'type'              => 'text',
                                             'instructions'      => '',
@@ -123,14 +138,14 @@ class ucf_college_multi_three_box_acf_pro_fields {
                                                 'id'    => '',
                                             ),
                                             'default_value'     => '',
-                                            'placeholder'       => '',
+                                            'placeholder'       => 'Text',
                                             'prepend'           => '',
                                             'append'            => '',
                                             'maxlength'         => '',
                                         ),
                                         array(
                                             'key'               => 'field_5c59f20c18316',
-                                            'label'             => 'Box URL',
+                                            'label'             => '',
                                             'name'              => 'box_url',
                                             'type'              => 'url',
                                             'instructions'      => '',
@@ -142,11 +157,11 @@ class ucf_college_multi_three_box_acf_pro_fields {
                                                 'id'    => '',
                                             ),
                                             'default_value'     => '',
-                                            'placeholder'       => '',
+                                            'placeholder'       => 'URL',
                                         ),
                                         array(
                                             'key'               => 'field_5c59f2221831d',
-                                            'label'             => 'Background image',
+                                            'label'             => '',
                                             'name'              => 'background_image_id',
                                             'type'              => 'image',
                                             'instructions'      => '',
@@ -187,7 +202,7 @@ class ucf_college_multi_three_box_acf_pro_fields {
                                     'sub_fields'        => array(
                                         array(
                                             'key'               => 'field_5c59f21f18318',
-                                            'label'             => 'Box Text',
+                                            'label'             => '',
                                             'name'              => 'box_text',
                                             'type'              => 'text',
                                             'instructions'      => '',
@@ -199,14 +214,14 @@ class ucf_college_multi_three_box_acf_pro_fields {
                                                 'id'    => '',
                                             ),
                                             'default_value'     => '',
-                                            'placeholder'       => '',
+                                            'placeholder'       => 'Text',
                                             'prepend'           => '',
                                             'append'            => '',
                                             'maxlength'         => '',
                                         ),
                                         array(
                                             'key'               => 'field_5c59f21f18319',
-                                            'label'             => 'Box URL',
+                                            'label'             => '',
                                             'name'              => 'box_url',
                                             'type'              => 'url',
                                             'instructions'      => '',
@@ -218,11 +233,11 @@ class ucf_college_multi_three_box_acf_pro_fields {
                                                 'id'    => '',
                                             ),
                                             'default_value'     => '',
-                                            'placeholder'       => '',
+                                            'placeholder'       => 'URL',
                                         ),
                                         array(
                                             'key'               => 'field_5c59f2221831e',
-                                            'label'             => 'Background image',
+                                            'label'             => '',
                                             'name'              => 'background_image_id',
                                             'type'              => 'image',
                                             'instructions'      => '',
@@ -263,7 +278,7 @@ class ucf_college_multi_three_box_acf_pro_fields {
                                     'sub_fields'        => array(
                                         array(
                                             'key'               => 'field_5c59f2221831b',
-                                            'label'             => 'Box Text',
+                                            'label'             => '',
                                             'name'              => 'box_text',
                                             'type'              => 'text',
                                             'instructions'      => '',
@@ -275,14 +290,14 @@ class ucf_college_multi_three_box_acf_pro_fields {
                                                 'id'    => '',
                                             ),
                                             'default_value'     => '',
-                                            'placeholder'       => '',
+                                            'placeholder'       => 'Text',
                                             'prepend'           => '',
                                             'append'            => '',
                                             'maxlength'         => '',
                                         ),
                                         array(
                                             'key'               => 'field_5c59f2221831c',
-                                            'label'             => 'Box URL',
+                                            'label'             => '',
                                             'name'              => 'box_url',
                                             'type'              => 'url',
                                             'instructions'      => '',
@@ -294,11 +309,11 @@ class ucf_college_multi_three_box_acf_pro_fields {
                                                 'id'    => '',
                                             ),
                                             'default_value'     => '',
-                                            'placeholder'       => '',
+                                            'placeholder'       => 'URL',
                                         ),
                                         array(
                                             'key'               => 'field_5c59f2221831f',
-                                            'label'             => 'Background image',
+                                            'label'             => '',
                                             'name'              => 'background_image_id',
                                             'type'              => 'image',
                                             'instructions'      => '',
@@ -328,10 +343,17 @@ class ucf_college_multi_three_box_acf_pro_fields {
                     'location'              => array(
                         array(
                             array(
-                                'param'    => 'post_taxonomy',
+                                'param'    => 'block',
                                 'operator' => '==',
-                                'value'    => 'ucf_college_shortcode_category:' . self::shortcode,
+                                'value'    => 'acf/ucf-college-multi-three-box',
                             ),
+                        ),
+                        array(
+                            array(
+                            	'param'    => 'post_taxonomy',
+	                            'operator' => '==',
+	                            'value'    => 'ucf_college_shortcode_category:' . self::shortcode,
+                            )
                         ),
                     ),
                     'menu_order'            => 0,

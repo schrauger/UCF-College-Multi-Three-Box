@@ -8,7 +8,7 @@ body {
 	overflow-x: hidden; // prevent horizontal scrollbar
 	overflow-y: scroll; // allow vertical scrollbar
 
-	article.publish {
+	article {
 		overflow: visible;
 
 		// full-width calculations to let huge-title break out of parent width restrictions
