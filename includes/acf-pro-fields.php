@@ -91,7 +91,7 @@ class ucf_college_multi_three_box_acf_pro_fields {
                             'maxlength'         => '',
                         ),
                         array(
-                            'key'               => 'field_5c59f15ac5579',
+                            'key'               => 'field_5c59f15ac5579', // if this key is changed, modify the scss rule that matches
                             'label'             => 'Triple Box Row',
                             'name'              => 'triple_box_row',
                             'type'              => 'repeater',

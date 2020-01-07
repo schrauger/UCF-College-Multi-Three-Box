@@ -19,6 +19,13 @@ body {
 	}
 }
 
+// override ACF limited css. this lets the editor fields show side-by-side when viewed in the old shortcode mode,
+// and stacks them in the side panel block editor (which is too skinny to show multiple columns)
+.acf-field-5c59f15ac5579 .acf-field-group {
+	display: inline-block;
+}
+
+
 // large image boxes
 .grid-box {
 	display: flex;
