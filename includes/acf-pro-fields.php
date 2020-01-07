@@ -22,11 +22,11 @@ class ucf_college_multi_three_box_acf_pro_fields {
 		    acf_register_block(array(
 			                       'name'				=> 'ucf_college_multi_three_box',
 			                       'title'				=> __('Multi Three Box'),
-			                       'description'		=> __('Three square boxes in a row with multiple row ability.'),
+			                       'description'		=> __('Three square boxes per row, each box with a title, url, and image.'),
 			                       'render_callback'	=> array('ucf_college_multi_three_box_shortcode','replacement_print'),
-			                       'category'			=> 'formatting',
-			                       'icon'				=> 'admin-comments',
-			                       'keywords'			=> array( 'testimonial', 'quote' ),
+			                       'category'			=> 'layout',
+			                       'icon'				=> 'screenoptions',
+			                       'keywords'			=> array( 'ucf', 'three','threebox','multi','college','eight','box','grid','table' ),
 		                       ));
 	    }
 
