@@ -116,7 +116,7 @@ class ucf_college_multi_three_box_shortcode {
 							}
 							$replacement_data .= "
     {$box_url_start}            
-        <span>{$box_text}<i class=\"fas fa-arrow-right\"></i></span>
+        <span>{$box_text}<i class=\"fa fa-arrow-right\"></i></span>
     {$box_url_end}";
 						}
 					}
@@ -141,8 +141,8 @@ class ucf_college_multi_three_box_shortcode {
 		if ( have_rows( 'triple_box_row' ) ) {
 			$header = get_field( 'header' );
 			$replacement_data .= "
+</div>
 <div class='wide-box full-width'> <!-- break out of parent width restrictions -->
-    <div class='wide-box-overlay'></div>
     <div class='container'>";
 
 			// print out each row of 3 boxes
@@ -187,7 +187,8 @@ class ucf_college_multi_three_box_shortcode {
 			}
 			$replacement_data .= "
     </div>
-</div>";
+</div>
+<div class='container mb-5 mt-3 mt-lg-5'>";
 
 		}
 

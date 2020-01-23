@@ -38,7 +38,8 @@ body {
     -webkit-transition: background-size 2s ease-in; }
     .grid-box a:hover, .grid-box div:hover {
       background-size: 200% auto;
-      text-decoration: none; }
+      text-decoration: none;
+      cursor: pointer; }
     .grid-box a span, .grid-box div span {
       text-align: center;
       display: block;
@@ -71,14 +72,8 @@ body {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 50px 0; }
-  .wide-box .wide-box-overlay {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    z-index: 7;
-    background: #ffcc00; }
+  margin: 50px 0;
+  background: #ffcc00; }
   .wide-box .inner-box {
     z-index: 9;
     position: relative;
@@ -95,12 +90,14 @@ body {
     .wide-box .inner-box img {
       max-width: 300px;
       margin-bottom: 25px; }
+    .wide-box .inner-box span {
+      font-size: 28px;
+      color: #fff; }
 
 @media (max-width: 1000px) {
   .grid-box a, .grid-box .inner-box, .wide-box a, .wide-box .inner-box {
     width: 45%; } }
+
 @media (max-width: 768px) {
   .grid-box a, .grid-box .inner-box, .wide-box a, .wide-box .inner-box {
     width: 100%; } }
-
-/*# sourceMappingURL=plugin.css.map */
