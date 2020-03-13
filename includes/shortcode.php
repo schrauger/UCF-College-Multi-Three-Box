@@ -125,7 +125,7 @@ class ucf_college_multi_three_box_shortcode {
 
 			}
 			$replacement_data .= "
-</div>";
+</div></div>";
 
 		}
 
