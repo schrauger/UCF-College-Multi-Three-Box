@@ -73,7 +73,8 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 50px 0;
-  background: #ffcc00; }
+  background: #ffcc00;
+  clear: both; }
   .wide-box .inner-box {
     z-index: 9;
     position: relative;
