@@ -199,7 +199,7 @@ class ucf_college_multi_three_box_shortcode {
 	/**
 	 * Only run this on plugin activation, as it's stored in the database
 	 */
-	static function insert_shortcode_term() {
+	/*static function insert_shortcode_term() {
 		$taxonomy = new ucf_college_shortcode_taxonomy;
 		$taxonomy->create_taxonomy();
 		wp_insert_term(
@@ -210,23 +210,23 @@ class ucf_college_multi_three_box_shortcode {
 				'slug'        => self::shortcode_slug
 			)
 		);
-	}
+	}*/
 
 	/**
 	 * Run when plugin is disabled and/or uninstalled. This removes the shortcode from the list of shortcodes in the
 	 * taxonomy.
 	 */
-	static function delete_shortcode_term() {
+	/*static function delete_shortcode_term() {
 		$taxonomy = new ucf_college_shortcode_taxonomy;
 		$taxonomy->create_taxonomy();
 		wp_delete_term( get_term_by( 'slug', self::shortcode_slug )->term_id, ucf_college_shortcode_taxonomy::taxonomy_slug );
-	}
+	}*/
 
 
 }
 
 add_action( 'init', array( 'ucf_college_multi_three_box_shortcode', 'add_shortcode' ) );
 add_filter( 'query_vars', array( 'ucf_college_multi_three_box_shortcode', 'add_query_vars_filter' ) ); // tell wordpress about new url parameters
-add_filter( 'ucf_college_shortcode_menu_item', array( 'ucf_college_multi_three_box_shortcode', 'add_ckeditor_shortcode' ) );
+//add_filter( 'ucf_college_shortcode_menu_item', array( 'ucf_college_multi_three_box_shortcode', 'add_ckeditor_shortcode' ) );
 
 //new ucf_college_multi_three_box_shortcode();
