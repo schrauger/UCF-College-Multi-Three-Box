@@ -42,6 +42,7 @@ class ucf_college_multi_three_box_acf_pro_fields {
 					                        'grid',
 					                        'table'
 				                        ),
+				                        'mode'            => 'edit',
 			                        ) );
 		    }
 
