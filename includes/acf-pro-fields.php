@@ -30,7 +30,7 @@ class ucf_college_multi_three_box_acf_pro_fields {
 					                        'replacement_print'
 				                        ),
 				                        'category'        => 'layout',
-				                        'icon'            => 'screenoptions',
+				                        'icon'            => 'table-row-after',
 				                        'keywords'        => array(
 					                        'ucf',
 					                        'three',
