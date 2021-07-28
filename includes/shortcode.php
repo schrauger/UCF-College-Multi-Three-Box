@@ -75,12 +75,13 @@ class ucf_college_multi_three_box_shortcode {
 		$replacement_data = ''; //string of html to return
 
 		if ( have_rows( 'triple_box_row' ) ) {
-			$header = get_field( 'header' );
+			$header           = get_field( 'header' );
 			$replacement_data .= "
 <div class='container'>
     <h2>{$header}</h2>
     <div class='grid-box'>";
 
+			$row_count = 0;
 			// print out each row of 3 boxes
 			while ( have_rows( 'triple_box_row' ) ) {
 				the_row();
@@ -92,32 +93,48 @@ class ucf_college_multi_three_box_shortcode {
 						// print out each individual box
 						while ( have_rows( $acf_individual_box_group_id ) ) {
 							the_row();
-							$box_text             = get_sub_field( 'box_text' );
+							$box_text = get_sub_field( 'box_text' );
 
-							$background_image_id = get_sub_field( 'background_image_id' );
-							$size = 'large';
-							$background_image = wp_get_attachment_image_src($background_image_id, $size);
-							$background_image_url = $background_image[0];
-
+							$background_image_id  = get_sub_field( 'background_image_id' );
+							$size                 = 'large';
+							$background_image     = wp_get_attachment_image_src( $background_image_id, $size );
+							$background_image_url = $background_image[ 0 ];
 							$box_url              = get_sub_field( 'box_url' );
-							if ($box_url){
-								$box_url_start = "<a 
-							    class='{$acf_individual_box_group_id} inner-box' 
-							    style='background-image: url(\"{$background_image_url}\")' 
-							    href='{$box_url}'
-							         >";
-								$box_url_end = "</a>";
+
+							if ( $box_text || $background_image_url || $box_url ) {
+
+								if ( $box_url ) {
+									$replacement_data .= "
+									<a
+									class='{$acf_individual_box_group_id} inner-box' 
+							    	style='background-image: url(\"{$background_image_url}\")' 
+							    	href='{$box_url}'
+							        >
+							        	<span>{$box_text}<i class=\"fa fa-arrow-right\"></i></span>
+				                    </a>
+									";
+								} else {
+									$replacement_data .= "
+									<div
+									class='{$acf_individual_box_group_id} inner-box' 
+							    	style='background-image: url(\"{$background_image_url}\")'
+							        >
+							        	<span>
+							        		{$box_text}
+					                    </span>
+				                    </div>
+									";
+								}
 							} else {
-								$box_url_start = "<div 
-							    class='{$acf_individual_box_group_id} inner-box' 
-							    style='background-image: url(\"{$background_image_url}\")' 
-							         >";
-								$box_url_end = "</div>";
+								// no data entered. put a blank box to fill in the space.
+								$replacement_data .= "
+								<div
+								class='{$acf_individual_box_group_id} inner-box' 
+						        
+						        >
+			                    </div>
+								";
 							}
-							$replacement_data .= "
-    {$box_url_start}            
-        <span>{$box_text}<i class=\"fa fa-arrow-right\"></i></span>
-    {$box_url_end}";
 						}
 					}
 				}
@@ -139,7 +156,7 @@ class ucf_college_multi_three_box_shortcode {
 		$replacement_data = ''; //string of html to return
 
 		if ( have_rows( 'triple_box_row' ) ) {
-			$header = get_field( 'header' );
+			$header           = get_field( 'header' );
 			$replacement_data .= "
 </div>
 <div class='wide-box full-width'> <!-- break out of parent width restrictions -->
@@ -156,29 +173,29 @@ class ucf_college_multi_three_box_shortcode {
 						// print out each individual box
 						while ( have_rows( $acf_individual_box_group_id ) ) {
 							the_row();
-							$box_text             = get_sub_field( 'box_text' );
-							$box_url              = get_sub_field( 'box_url' );
-							if ($box_url){
+							$box_text = get_sub_field( 'box_text' );
+							$box_url  = get_sub_field( 'box_url' );
+							if ( $box_url ) {
 								$box_url_start = "<a href='{$box_url}'>";
-								$box_url_end = "</a>";
+								$box_url_end   = "</a>";
 							} else {
 								$box_url_start = "";
-								$box_url_end = "";
+								$box_url_end   = "";
 							}
 
-							$background_image_id = get_sub_field( 'background_image_id' );
-							$size = 'large';
-							$background_image = wp_get_attachment_image_src($background_image_id, $size);
-							$background_image_url = $background_image[0];
+							$background_image_id  = get_sub_field( 'background_image_id' );
+							$size                 = 'large';
+							$background_image     = wp_get_attachment_image_src( $background_image_id, $size );
+							$background_image_url = $background_image[ 0 ];
 
 							$replacement_data .= "
-        <div class='inner-box {$acf_individual_box_group_id}'>
-            {$box_url_start}
-                <img src='{$background_image_url}' />
-                <br />
-                <span>{$box_text}</span>
-            {$box_url_end}
-        </div>";
+						        <div class='inner-box {$acf_individual_box_group_id}'>
+						            {$box_url_start}
+						                <img src='{$background_image_url}' />
+						                <br />
+						                <span>{$box_text}</span>
+						            {$box_url_end}
+						        </div>";
 						}
 					}
 				}
@@ -226,7 +243,7 @@ class ucf_college_multi_three_box_shortcode {
 }
 
 add_action( 'init', array( 'ucf_college_multi_three_box_shortcode', 'add_shortcode' ) );
-add_filter( 'query_vars', array( 'ucf_college_multi_three_box_shortcode', 'add_query_vars_filter' ) ); // tell wordpress about new url parameters
+//add_filter( 'query_vars', array( 'ucf_college_multi_three_box_shortcode', 'add_query_vars_filter' ) ); // tell wordpress about new url parameters
 //add_filter( 'ucf_college_shortcode_menu_item', array( 'ucf_college_multi_three_box_shortcode', 'add_ckeditor_shortcode' ) );
 
 //new ucf_college_multi_three_box_shortcode();
