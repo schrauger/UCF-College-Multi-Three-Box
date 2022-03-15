@@ -12,6 +12,8 @@ namespace ucf_college_multi_three_box\acf_pro_fields;
 
 const shortcode = 'ucf_college_multi_three_box';
 
+const acf_group_key = 'group_5c59f155c5f05';
+
 add_action( 'acf/init', __NAMESPACE__ . '\\create_fields' );
 
 function create_fields() {
@@ -48,7 +50,7 @@ function create_fields() {
 		if ( function_exists( 'acf_add_local_field_group' ) ) {
 			acf_add_local_field_group(
 				array(
-					'key'                   => 'group_5c59f155c5f05',
+					'key'                   => acf_group_key,
 					'title'                 => 'Multi Three Box',
 					'fields'                => array(
 						array(
