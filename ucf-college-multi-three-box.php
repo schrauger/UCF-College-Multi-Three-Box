@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF College Multi Three Box
 Description: Provides a shortcode for a Multi Three Box, to be used in the UCF Colleges Theme
-Version: 1.7.1
+Version: 1.7.2
 Author: Stephen Schrauger
 Plugin URI: https://github.com/schrauger/UCF-College-Multi-Three-Box
 Github Plugin URI: schrauger/UCF-College-multi-three-box
