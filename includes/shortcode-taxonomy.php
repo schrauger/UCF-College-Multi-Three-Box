@@ -1,5 +1,6 @@
 <?php
 
+namespace ucf_college_shortcode_taxonomy;
 //------------------------------------------------------------Custom taxonomies
 if (!class_exists('ucf_college_shortcode_taxonomy')) {
     class ucf_college_shortcode_taxonomy {
@@ -44,7 +45,7 @@ if (!class_exists('ucf_college_shortcode_taxonomy')) {
                         'labels'       => $labels,
                         'query_var'    => false, // don't allow url queries for this shortcode
                         'manage_terms' => false,
-                        'show_in_rest' => true,
+                        'show_in_rest' => false, // don't show in side menu. this taxonomy is deprecated and should not be visible.
                     )
                 );
             }
