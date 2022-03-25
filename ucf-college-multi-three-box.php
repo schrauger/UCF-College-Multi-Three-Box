@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF College Multi Three Box
 Description: Provides a shortcode for a Multi Three Box, to be used in the UCF Colleges Theme
-Version: 1.7.3
+Version: 1.8.0
 Author: Stephen Schrauger
 Plugin URI: https://github.com/schrauger/UCF-College-Multi-Three-Box
 Github Plugin URI: schrauger/UCF-College-multi-three-box
@@ -14,13 +14,15 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-include plugin_dir_path( __FILE__ ) . 'includes/shortcode-taxonomy.php'; // defines the taxonomy for backwards compatibility, but hides it from view
 include plugin_dir_path( __FILE__ ) . 'includes/acf-pro-fields.php';
 include plugin_dir_path( __FILE__ ) . 'includes/block.php';
 
 // plugin css/js
 add_action( 'enqueue_block_assets', __NAMESPACE__ . '\\add_css' );
 add_action( 'enqueue_block_assets', __NAMESPACE__ . '\\add_js' );
+
+// backwards compatibility
+//add_action('wp_loaded', __NAMESPACE__ . '\\register_taxonomy');
 
 // plugin activation hooks
 register_activation_hook( __FILE__, __NAMESPACE__ . '\\activation' );
@@ -57,7 +59,29 @@ function add_js() {
 				);
 			}
 		}
+		if ( file_exists( plugin_dir_path( __FILE__ ) . 'includes/arrive.min.js' ) ) {
+			wp_enqueue_script(
+				'arrive',
+				plugin_dir_url( __FILE__ ) . 'includes/arrive.min.js',
+				array( 'jquery' ),
+				filemtime( plugin_dir_path( __FILE__ ) . '/includes/arrive.min.js' ),
+				false
+			);
+		}
+		if ( file_exists( plugin_dir_path( __FILE__ ) . '/includes/plugin-editor-hide-taxonomy-if-unused.js' ) ) {
+			wp_enqueue_script(
+				'ucf-college-accordion-script-editor-hide-taxonomy-if-unused',
+				plugin_dir_url( __FILE__ ) . 'includes/plugin-editor-hide-taxonomy-if-unused.js',
+				array( 'jquery', 'arrive' ),
+				filemtime( plugin_dir_path( __FILE__ ) . '/includes/plugin-editor-hide-taxonomy-if-unused.js' ),
+				true
+			);
+		}
 	}
+}
+
+function register_taxonomy() {
+	\ucf_college_shortcode_taxonomy\create_taxonomy(acf_pro_fields\shortcode);
 }
 
 

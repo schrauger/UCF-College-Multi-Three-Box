@@ -25,9 +25,6 @@ function replacement_print() {
 }
 
 const shortcode_slug        = 'ucf_college_multi_three_box'; // the shortcode text entered by the user (inside square brackets)
-const shortcode_name        = 'Multi Three Box (deprecated - use blocks)';
-const shortcode_description = 'Deprecated. Tabbed sections with repeater list';
-
 /**
  * Adds the shortcode to wordpress' index of shortcodes.
  * Deprecated, but kept for nursing until all pages use blocks.
