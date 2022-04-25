@@ -1,2 +1,6 @@
 *.css.map
 .devpushed
+.idea/
+includes/.sass-cache/
+node_modules/
+package-lock.json
