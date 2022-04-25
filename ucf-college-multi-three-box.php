@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF College Multi Three Box
 Description: Provides a shortcode for a Multi Three Box, to be used in the UCF Colleges Theme
-Version: 1.8.0
+Version: 1.9.0
 Author: Stephen Schrauger
 Plugin URI: https://github.com/schrauger/UCF-College-Multi-Three-Box
 Github Plugin URI: schrauger/UCF-College-multi-three-box
@@ -14,6 +14,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+include plugin_dir_path( __FILE__ ) . 'includes/shortcode-taxonomy.php';
 include plugin_dir_path( __FILE__ ) . 'includes/acf-pro-fields.php';
 include plugin_dir_path( __FILE__ ) . 'includes/block.php';
 
@@ -22,7 +23,7 @@ add_action( 'enqueue_block_assets', __NAMESPACE__ . '\\add_css' );
 add_action( 'enqueue_block_assets', __NAMESPACE__ . '\\add_js' );
 
 // backwards compatibility
-//add_action('wp_loaded', __NAMESPACE__ . '\\register_taxonomy');
+add_action('init', __NAMESPACE__ . '\\register_taxonomy');
 
 // plugin activation hooks
 register_activation_hook( __FILE__, __NAMESPACE__ . '\\activation' );
