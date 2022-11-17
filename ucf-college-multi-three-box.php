@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF College Multi Three Box
 Description: Provides a shortcode for a Multi Three Box, to be used in the UCF Colleges Theme
-Version: 1.9.1
+Version: 1.9.2
 Author: Stephen Schrauger
 Plugin URI: https://github.com/schrauger/UCF-College-Multi-Three-Box
 Github Plugin URI: schrauger/UCF-College-multi-three-box
@@ -71,14 +71,14 @@ function add_js() {
 		}
         if ( get_post_type() !== 'post'){
 		    if ( file_exists( plugin_dir_path( __FILE__ ) . '/includes/plugin-editor-hide-taxonomy-if-unused.js' ) ) {
-        			wp_enqueue_script(
-        				'ucf-college-accordion-script-editor-hide-taxonomy-if-unused',
-        				plugin_dir_url( __FILE__ ) . 'includes/plugin-editor-hide-taxonomy-if-unused.js',
-        				array( 'jquery', 'arrive' ),
-        				filemtime( plugin_dir_path( __FILE__ ) . '/includes/plugin-editor-hide-taxonomy-if-unused.js' ),
-        				true
-        			);
-        		}
+                wp_enqueue_script(
+                    'ucf-college-accordion-script-editor-hide-taxonomy-if-unused',
+                    plugin_dir_url( __FILE__ ) . 'includes/plugin-editor-hide-taxonomy-if-unused.js',
+                    array( 'jquery', 'arrive' ),
+                    filemtime( plugin_dir_path( __FILE__ ) . '/includes/plugin-editor-hide-taxonomy-if-unused.js' ),
+                    true
+                );
+            }
 		}
 
 	}
