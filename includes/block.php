@@ -68,6 +68,7 @@ function replacement_image_boxes() {
 						$size                 = 'large';
 						$background_image     = wp_get_attachment_image_src( $background_image_id, $size );
 						$background_image_url = $background_image[ 0 ];
+                        $background_image_alt = get_post_meta($background_image_id, '_wp_attachment_image_alt', TRUE);
 						$box_url              = get_sub_field( 'box_url' );
 						if (!$box_url){
 							$box_url          = get_sub_field( 'box_link'); //@since 1.6.0
@@ -79,7 +80,9 @@ function replacement_image_boxes() {
 								$replacement_data .= "
 									<a
 									class='{$acf_individual_box_group_id} inner-box' 
-							    	style='background-image: url(\"{$background_image_url}\")' 
+							    	style='background-image: url(\"{$background_image_url}\")'
+							    	role='img'
+							    	aria-label='{$background_image_alt}' 
 							    	href='{$box_url}'
 							        >
 							        	<span>{$box_text}<i class=\"fa fa-arrow-right\"></i></span>
@@ -90,6 +93,8 @@ function replacement_image_boxes() {
 									<div
 									class='{$acf_individual_box_group_id} inner-box' 
 							    	style='background-image: url(\"{$background_image_url}\")'
+							    	role='img'
+							    	aria-label='{$background_image_alt}'
 							        >
 							        	<span>
 							        		{$box_text}
@@ -125,6 +130,8 @@ function replacement_image_boxes() {
  *
  */
 function replacement_small_icon_boxes() {
+
+
 	$replacement_data = ''; //string of html to return
 
 	if ( have_rows( 'triple_box_row' ) ) {
@@ -159,11 +166,11 @@ function replacement_small_icon_boxes() {
 						$size                 = 'large';
 						$background_image     = wp_get_attachment_image_src( $background_image_id, $size );
 						$background_image_url = $background_image[ 0 ];
-
+                        $background_image_alt = get_post_meta($background_image_id, '_wp_attachment_image_alt', TRUE);
 						$replacement_data .= "
 						        <div class='inner-box {$acf_individual_box_group_id}'>
 						            {$box_url_start}
-						                <img src='{$background_image_url}' />
+                                        <img src='{$background_image_url}' alt='{$background_image_alt}' />
 						                <br />
 						                <span>{$box_text}</span>
 						            {$box_url_end}
@@ -183,5 +190,3 @@ function replacement_small_icon_boxes() {
 
 	return $replacement_data;
 }
-
-
